@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.sidebar {
+    font-family: "Noto Sans", sans-serif;
+    position: fixed;
+    left:0;
+    top:0;
+    height: 100vh;
+    width: 20%;
+    background-color: #171717;
+    transition: transform 0.3s ease-in-out;
+}
+  
+.sidebar.open {
+    transform: translateX(0);
+}
+  
+.sidebar.closed {
+    transform: translateX(-100%);
+}
+
+.top {
+    border-color:white;
+    border: 15px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 15px 15px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 15px;
+}
+
+.top .container .inner-container{
+    display: flex; 
+    align-items: center;
+}
+
+.top .container .inner-container .logo{
+    width:65px;
+    height:45px;
+}
+
+.top .outer-container:hover{
+    background:#2f2f2f;
+    cursor:pointer;
+}
+
+.top .outer-container{
+    transition: background-color 0.3s ease;
+}
+
+.top .container .more-info-icon {
+    width: 20px;
+}
+
+.top .new-chat .chat-summary{
+    color: white;
+}
+
+
+.toggle-btn{
+    position: absolute;
+    right: -6%;
+    bottom: 50%;
+    border: none;
+    background-color: transparent;
+}
+
+.toggle-btn .button{
+    width:20px;
+    position: absolute;
+    right: -6%;
+    bottom: 50%;
+    border: none;   
+    cursor: pointer;
+    background:transparent;
+}
+  
+.sidebar-content {
+    padding: 20px;
+}

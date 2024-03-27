@@ -1,0 +1,17 @@
+
+
+.light-mode {
+    /* Define your default styles */
+    background-color: white;
+    color: #333;
+}
+  
+.dark-mode {
+    /* Define your dark mode styles */
+    background-color: #333;
+    color: #fff;
+}
+
+.sidebar{
+    width:250px;
+}
