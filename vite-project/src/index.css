@@ -2,7 +2,10 @@
     min-height:100vh;
     display:flex;
 }
-body {
+html, body {
     background-color: #212121;
     overflow:hidden;
+    margin:0;
+    height: 100%;
+    padding:0;
 }

@@ -1,19 +1,9 @@
-import {React, useState} from 'react'
+import React from 'react'
 import './Sidebar.css'
 import {assets} from '../assets/assets'
-const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
+const Sidebar = (style) => {
   return (
-    <div className = {`sidebar ${isOpen ? 'open' : 'closed'}`}>
-      <button className="toggle-btn" onClick={toggleSidebar}>
-        {isOpen ? <img className = "button" src={assets.left_arrow}/> : <img className = "button" src = {assets.right_arrow}/>}
-      </button>
-      
+    <div className = "sidebar" style= {style}>
       <div className="top">
         <div className="outer-container">
           <div className="container">
@@ -24,15 +14,26 @@ const Sidebar = () => {
                 <p className = "chat-summary"> New Chat </p>
               </div>
             </div>
-
-
             <img className = 'more-info-icon' src = {assets.plus_icon}/>
           </div>
+
         </div>
+
+      </div>
+      <p className = "recent">
+          Recent
+      </p>
+      <div className="middle">
+        
       </div>
 
-      <div className="bottom">
-        
+      <div className = "bottom">
+        <div className="container">
+          <img className = "pfp" src ={assets.pfp} alt="" />
+          <p className='username'> Username </p>
+
+        </div>
+
       </div>
     </div>
   )
