@@ -12,12 +12,14 @@ const App = () => {
 
   return (
     <div className = "app">
-      <button className="toggle-btn" style = {{left: isOpen ? '20%' : '0%'}} onClick={toggleSidebar}>
+
+
+      {isOpen && <Sidebar/>}
+      <Content />
+      
+      <button className="toggle-btn" style = {{left: isOpen ? '300px' : '0px'}} onClick={toggleSidebar}>
         {isOpen ? <img className = "button" src={assets.left_arrow}/> : <img className = "button" src = {assets.right_arrow}/>}
       </button>
-
-      {isOpen && <Sidebar style = {{width: '30%'}}/>}
-      <Content style={{ width: isOpen ? '70%' : '100%' }}/>
     </div>
   )
 }

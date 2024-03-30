@@ -7,7 +7,6 @@ const Sidebar = (style) => {
       <div className="top">
         <div className="outer-container">
           <div className="container">
-
             <div className="inner-container">
               <img className = "logo" src = {assets.Logo}/>
               <div className="new-chat">
@@ -16,7 +15,6 @@ const Sidebar = (style) => {
             </div>
             <img className = 'more-info-icon' src = {assets.plus_icon}/>
           </div>
-
         </div>
 
       </div>
@@ -31,9 +29,7 @@ const Sidebar = (style) => {
         <div className="container">
           <img className = "pfp" src ={assets.pfp} alt="" />
           <p className='username'> Username </p>
-
         </div>
-
       </div>
     </div>
   )

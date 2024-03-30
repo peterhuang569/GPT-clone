@@ -1,11 +1,23 @@
-.content{
-    width:100vh;
+.wrapper {
+    width:100vw;
     height:100vh;
+    position: relative;
     display:flex;
     flex-direction: column;
     justify-content: center;
-    flex:7;
     align-items: center;
+    flex:8;
+}
+
+.wrapper .content{
+    position: relative;
+    overflow:auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:100%;
 }
 
 .content .center{
@@ -14,8 +26,8 @@
 }
 
 .content .center .logo {
-    width:85px;
-    height:50px;
+    width:50px;
+    border-radius: 50px;
 }
 
 .content .center .center-text{
@@ -32,8 +44,8 @@
 }
 
 .boxes {
-    position:fixed;
-    bottom:100px;
+    position:absolute;
+    bottom: 0px;
     color:white;
     align-items: center;
     justify-content: center;
@@ -61,9 +73,10 @@
     background-color: #2f2f2f;
     border-color: #434343;
 }
-.boxes h{
+.boxes h2{
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 500;
+    margin:0;
 }
 
 .boxes p{
@@ -73,21 +86,35 @@
     margin:0;
 }
 
-.textbar {
-    position: fixed;
-    bottom: 25px;
-    width: 90%;
-    max-width: 1000px;
-    height: 50px;
-    display: flex;
+
+
+.wrapper .bottom{
+    display:flex;
     flex-direction: column;
-    align-items: left;
-    border: 2px solid #424242;
     justify-content: center;
-    border-radius: 15px;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin:0;
+    z-index: 1;
 }
 
-.textbar .textbox {
+.wrapper .bottom .textbar {
+    width:90%;
+    height: 50px;
+    max-width: 1000px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #424242;
+    justify-content: left;
+    border-radius: 15px;
+    background-color: #212121;
+}
+
+.wrapper .bottom .textbar .textbox {
+    width:96%;
     padding: 10px;
     border: none;
     background: transparent;
@@ -95,14 +122,15 @@
     outline: none;
     transition: caret-color 0.3s ease;
     color: white;
+    font-weight: 500;
 }
 
-.textbar .textbox:focus {
+.wrapper .bottom  .textbar .textbox:focus {
     caret-color: white;
 
 }
 
-.textbar:focus-within {
+.wrapper .bottom .textbar:focus-within {
     border-color: #4c4c4c;
 }
 
@@ -114,4 +142,60 @@
     font-size:12px;
     color:white;
     font-weight:1;
+}
+
+.chat-history{
+
+    z-index: 0;
+    max-width: 1000px;
+    height:900px;
+    position: relative;
+    display:flex;
+    padding-top:50px;
+    flex-direction: column;
+}
+.chat-history div{
+    color:white;
+    font-size:15px;
+}
+
+.chat-history .chats{
+
+    display:flex;
+    padding: 8px 16px;
+
+}
+
+.chat-history .chats .name{
+    font-size: 15px;
+    margin:0;
+}
+
+.chat-history .chats .chat-pfp{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    height:20px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #383838;
+    border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
