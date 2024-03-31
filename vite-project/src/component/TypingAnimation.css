@@ -1,0 +1,20 @@
+.typing-animation {
+    justify-content: left;
+    overflow: hidden; /* Hide overflow text */
+  }
+  
+.typing-animation span {
+    display: flex;
+    vertical-align: left;
+    animation: typing 0.3s steps(40, end), blink-caret 0.75s infinite alternate; /* Typing animation */
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: gray; }
+}

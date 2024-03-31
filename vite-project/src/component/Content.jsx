@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Content.css'
 import {assets} from '../assets/assets'
+import TypingAnimation from './TypingAnimation';
+
 const Content = (style) => {
 
   const [ prompted, setPrompted ] = useState(false);
@@ -15,17 +17,17 @@ const Content = (style) => {
   };
 
   const ListItem = ({ item, index }) => {
-
     return(
       <div className = "chats">
-        
         { index % 2 === 0 ? <img className = "chat-pfp" src={assets.pfp} alt="" /> : <img className = "chat-pfp" src={assets.Logo} alt="" /> }
         <div>
           { index % 2 === 0 ? <h2 className="name"> You </h2> : <h2 className="name"> ChatGPT </h2>}
-          
-          {item}
+          {
+            (index === chat.length - 1 && index % 2 === 1) 
+              ? <TypingAnimation text={item} /> 
+              : item
+          }
         </div>
-
       </div>
     ) 
   };

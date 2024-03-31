@@ -1,7 +1,30 @@
-import React from 'react'
+import {React, useState} from 'react'
 import './Sidebar.css'
 import {assets} from '../assets/assets'
+import { useGoogleLogin } from '@react-oauth/google';
+import axios from 'axios';
 const Sidebar = (style) => {
+  const [username, setUsername] = useState('Login');
+  const [pfp, setPfp] = useState();
+
+  //fix this, every reload it rerenders the entire thing
+  const login = useGoogleLogin({
+    onSuccess: async tokenResponse => {
+      console.log(tokenResponse);
+      // fetching userinfo can be done on the client or the server
+      const userInfo = await axios
+        .get('https://www.googleapis.com/oauth2/v3/userinfo', {
+          headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
+        })
+        .then(res => res.data);
+      
+      setUsername(userInfo.name); 
+      setPfp(userInfo.picture);
+    },
+  });
+
+
+
   return (
     <div className = "sidebar" style= {style}>
       <div className="top">
@@ -26,11 +49,12 @@ const Sidebar = (style) => {
       </div>
 
       <div className = "bottom">
-        <div className="container">
-          <img className = "pfp" src ={assets.pfp} alt="" />
-          <p className='username'> Username </p>
+        <div className="container" onClick={() => login()}>
+          {pfp && <img className = "pfp" src ={pfp} alt="" />}
+          <p className='username'> {username} </p>
         </div>
       </div>
+
     </div>
   )
 }
